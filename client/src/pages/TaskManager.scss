@@ -1,0 +1,146 @@
+// ! Base reset
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  background-color: rgb(180, 245, 245);
+}
+
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+.task-manager {
+  &-wrapper {
+    height: 90vh;
+    max-width: 80rem;
+    margin: 4rem auto;
+    background-color: rgb(106, 188, 255);
+    border-radius: 2rem;
+    box-shadow: 0px 1px 15px 4px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    padding-bottom: 4rem;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-title {
+    outline: none;
+    border: none;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    margin: 4rem auto 0 auto;
+    height: 44px;
+    border-radius: 20rem;
+    padding: 0 2rem;
+    font-size: 1.8rem;
+  }
+  &-details {
+    width: 100%;
+    outline: none;
+    border: none;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+    height: 30rem;
+    border-radius: 2rem;
+    padding: 2rem;
+    font-size: 1.8rem;
+    &::placeholder {
+      font-family: inherit;
+    }
+  }
+  .details-area {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 2rem auto 0 auto;
+  }
+  .time-status-selection {
+    width: 50%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .start-time,
+    .end-time {
+      height: 4rem;
+      width: 80%;
+      padding: 0 1.5rem;
+      outline: none;
+      border: none;
+      border-radius: 10rem;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+      &::placeholder {
+        font-size: 1.2rem;
+      }
+    }
+    .status-selection {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      .done,
+      .todo {
+        height: 3rem;
+        width: 8rem;
+        border-radius: 3rem;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #555;
+        cursor: pointer;
+      }
+      .done {
+        background-color: rgb(160, 253, 160);
+        &.active {
+          background-color: rgb(7, 233, 7);
+        }
+      }
+      .todo {
+        background-color: rgb(255, 227, 175);
+        &.active {
+          background-color: rgb(234, 174, 61);
+        }
+      }
+    }
+    .submit-button {
+      border: none;
+      outline: none;
+      color: #fff;
+      background-color: rgb(7, 80, 138);
+      padding: 1.5rem 6rem;
+      border-radius: 10rem;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: all 0.25s linear;
+      box-sizing: border-box !important;
+      &:hover {
+        box-sizing: border-box !important;
+        transition: all 0.25s linear;
+        background-color: rgb(32, 226, 119);
+      }
+    }
+  }
+}
+.task-cards {
+}
