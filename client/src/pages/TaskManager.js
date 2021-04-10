@@ -64,7 +64,7 @@ function TaskManager() {
         taskDetails: details,
         status,
       });
-      setPosts([
+      await setPosts([
         <TaskCard
           id={id}
           title={title}
@@ -76,6 +76,10 @@ function TaskManager() {
         />,
         ...posts,
       ]);
+
+      await setStatus("TODO");
+      await setTodoClass("todo active");
+      await setDoneClass("done");
     }
   };
 

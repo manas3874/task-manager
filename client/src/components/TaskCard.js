@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TaskCard.scss";
 import axios from "axios";
 import trash from "../assets/delete.svg";
@@ -11,10 +11,13 @@ function TaskCard({
   status,
   updateDom,
 }) {
-  const [currentStatus, setCurrentStatus] = useState(status);
+  const [currentStatus, setCurrentStatus] = useState(null);
   const [statusClass, setStatusClass] = useState(
     `status ${status.toLowerCase()}`
   );
+  useEffect(() => {
+    setCurrentStatus(status);
+  }, []);
   // ! update the status on changes
   const statusHandler = () => {
     if (currentStatus === "TODO") {
@@ -49,7 +52,7 @@ function TaskCard({
   };
   // ! delete the post from the db
   const deleteHandler = (ev) => {
-    ev.preventDefault();
+    // ev.preventDefault();
     axios
       .post("http://localhost:5000/api/delete-post", {
         _id: id,

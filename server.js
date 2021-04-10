@@ -2,8 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const db = require("./database.json");
 const app = express();
-
 app.use(express.json({ extended: true }));
+
 // ! Basic CRUD operations
 // ! CREATE posts
 app.use("/api/create-post", (request, response, next) => {
